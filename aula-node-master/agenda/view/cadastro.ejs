@@ -1,0 +1,44 @@
+<%- include("header") -%>
+
+<main class="container">
+    <h1>Cadastro de Contato</h1>
+
+    <form action="/salvar" method="POST">
+
+     <% if (dados.erro) { %>
+      <div class="alert alert-danger">
+        <%= dados.erro %>
+      </div>
+      <% } %>
+      
+      <% if(dados._id) { %>
+      <input type="hidden" name="id" value="<%= dados.id %>" />
+      <% } %>
+     
+      <div class="col-6">
+        <label class="form-label">Nome</label>
+        <input required type="text" class="form-control" name="nome" value = "<%= dados.nome%>" />
+      </div>
+
+      <div class="col-6">
+          <label class="form-label">Telefone</label>
+          <input required type="text" class="form-control" name= "telefone" value="<%= dados.telefone%>" />
+      </div>
+
+      <div class="col-6">
+          <label class="form-label">Email</label>
+          <input type="text" class="form-control"name="email" value = "<%= dados.email%>" /> 
+      </div>
+
+      <div class="col-6">
+          <label class="form-label">Cidade</label>
+          <input type="text" class="form-control" name="cidade" value = "<%= dados.cidade%>" /> 
+      </div>
+
+      <button class="btn btn-primary">Cadastrar</button>
+
+    </form>
+
+</main>
+
+<%- include("footer") -%>

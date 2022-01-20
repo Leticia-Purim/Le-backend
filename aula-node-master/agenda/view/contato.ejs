@@ -1,0 +1,14 @@
+<%- include("header") -%>
+
+        <h1>Página de contato</h1>
+
+        <% if (nome) { %>
+            <p>Bem vindo: <b> <%= nome %>  </b></p>
+
+        <% } else { %>
+
+            <p>O nome não foi informado</p>
+            
+        <% } %>
+
+<%- include("footer") -%>
